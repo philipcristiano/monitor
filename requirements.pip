@@ -1,0 +1,8 @@
+circus
+gevent
+coverage
+importlib
+mock
+nose
+nosy
+pyzmq
