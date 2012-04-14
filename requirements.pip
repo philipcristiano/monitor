@@ -5,4 +5,5 @@ importlib
 mock
 nose
 nosy
+puka
 pyzmq

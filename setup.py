@@ -17,7 +17,8 @@ setup(
     packages=['monitor', 'monitor.monitors'],
     namespace_packages=['monitor.monitors'],
     install_requires=[
-        'importlib'
+        'importlib',
+        'puka',
     ],
     test_suite='tests',
     long_description=read('README.md'),
