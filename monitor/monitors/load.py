@@ -1,5 +1,4 @@
 from monitor.functions import register
-from monitor.monitors.base_monitor import BaseMonitor
 
 
 def monitor_load(record):

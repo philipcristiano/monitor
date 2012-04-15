@@ -1,21 +1,23 @@
 import threading
 import time
 
-from monitor.functions import record
-
-def run_monitor(name, monitor_function):
+def run_monitor(name, monitor_function, queue):
     "Starts a monitor and returns a Thread"
     print 'starting', name
     thread = threading.Thread(
         target=_runner,
         name=name,
-        args=[monitor_function, 5],
+        args=[name, monitor_function, 5, queue],
     )
     thread.daemon = True
     thread.start()
     return thread
 
-def _runner(func, interval):
+def _runner(name, func, interval, queue):
+    def record(data):
+        print name, data
+        queue.put((name, data))
+
     while True:
         start = time.time()
         func(record)
