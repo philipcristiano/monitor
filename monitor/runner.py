@@ -16,7 +16,7 @@ def run_monitor(name, monitor_function, queue):
 def _runner(name, func, interval, queue):
     def record(data):
         print name, data
-        queue.put((name, data))
+        queue.put((name, str(time.time()), str(data)))
 
     while True:
         start = time.time()
