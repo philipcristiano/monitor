@@ -1,11 +1,11 @@
 import time
 
-import puka
+import zmq
 
-def create_connection():
-    """Creates an AMQP connection"""
-    client = puka.Client("amqp://33.33.33.10/")
-    promise = client.connect()
-    time.sleep(1)
-    client.wait(promise)
-    return client
+
+def create_zeromq_connection():
+    context = zmq.Context()
+    publisher = context.socket(zmq.PUB)
+    publisher.bind('tcp://*:5561')
+
+    return publisher

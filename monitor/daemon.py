@@ -6,7 +6,8 @@ import importlib
 
 import monitor.functions
 from monitor.runner import run_monitor
-from monitor.publisher import start_publisher
+from monitor.publisher import start_zeromq_publisher
+
 
 config = {
     'monitors': ['random_data']
@@ -26,7 +27,7 @@ def load_monitors():
 def main():
 
     record_queue = Queue.Queue()
-    publisher = start_publisher(record_queue)
+    publisher = start_zeromq_publisher(record_queue)
 
     while True:
         load_monitors()
