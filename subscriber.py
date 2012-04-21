@@ -5,6 +5,7 @@ import zmq
 #  Socket to talk to server
 context = zmq.Context()
 socket = context.socket(zmq.SUB)
+socket.identity = 'subscriber'
 
 print "Reading metrics..."
 socket.connect ("tcp://localhost:5561")
