@@ -6,6 +6,11 @@
 Welcome to monitor's documentation!
 ===================================
 
+`monitor` is a daemon to publish metrics from a server to ZeroMQ. It is the
+beginning to replacing Nagios for alerting using Esper or some other Complex Event Processing tool.
+
+It is currently in the planning stages.
+
 Contents:
 
 .. toctree::
