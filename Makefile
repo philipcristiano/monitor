@@ -11,12 +11,15 @@ PIP = bin/pip
 PYTHON = $(ENV) bin/python
 
 ## Testing ##
-.PHONY: test tdd dist clean requirements virtualenv
+.PHONY: test tdd dist docs clean requirements virtualenv
 test:
 	$(NOSE) tests
 
 tdd:
 	$(NOSY)
+
+docs:
+	bin/sphinx-build -b html -d docs/build/doctrees docs/source docs/html
 
 foreman_streamers:
 	$(DEV_ENV) foreman start -f Procfile.streamers

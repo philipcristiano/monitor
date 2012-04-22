@@ -27,8 +27,9 @@
 bin
 develop-eggs
 dist
-doc/doctrees
-doc/html
+docs/doctrees
+docs/html
+docs/build
 downloads
 eggs
 fake-eggs
