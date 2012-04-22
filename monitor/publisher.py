@@ -39,7 +39,6 @@ def zeromq_publish_target(queue):
         routing_key = '{0}.{1}'.format(hostname, item[0])
         to_send = [routing_key]
         to_send.extend(item)
-        print 'publishing', to_send
         client.send_multipart(to_send)
 
 
