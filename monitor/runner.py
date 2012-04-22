@@ -21,4 +21,6 @@ def _runner(name, func, interval, queue):
         start = time.time()
         func(record)
         next_run = start + interval
-        time.sleep(next_run - time.time())
+        sleep = next_run - time.time()
+        if sleep > 0:
+            time.sleep(sleep)
