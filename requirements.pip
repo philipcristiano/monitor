@@ -7,3 +7,4 @@ nose
 nosy
 pyzmq
 sphinx
+-e git://github.com/lacostej/nosyd.git#egg=nosyd

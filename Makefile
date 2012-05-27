@@ -6,6 +6,7 @@ EASY_INSTALL = bin/easy_install
 DEV_ENV = source bin/activate ;
 NOSE = bin/nosetests --nocapture
 NOSY = bin/nosy
+NOSYD = bin/nosyd -1
 PYTHON_PATH = PYTHONPATH=goalltheplaces
 PIP = bin/pip
 PYTHON = $(ENV) bin/python
@@ -16,7 +17,7 @@ test:
 	$(NOSE) tests
 
 tdd:
-	$(NOSY)
+	$(DEV_ENV) $(NOSYD) tests/unit
 
 docs:
 	bin/sphinx-build -b html -d docs/build/doctrees docs/source docs/html
